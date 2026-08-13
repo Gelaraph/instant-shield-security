@@ -112,7 +112,7 @@ export function AboutSection() {
               <LinkButton href="/about" variant="outlineDark">
                 Company Overview
               </LinkButton>
-              <LinkButton href="/capabilities">Our Projects</LinkButton>
+              <LinkButton href="/projects">Our Projects</LinkButton>
             </div>
           </Reveal>
         </div>

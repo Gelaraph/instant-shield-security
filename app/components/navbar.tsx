@@ -83,7 +83,7 @@ export function Navbar() {
             </Link>
             <button
               type="button"
-              onClick={handleNavClick}
+              onClick={() => setOpen((v) => !v)}
               aria-expanded={open}
               aria-label={open ? "Close menu" : "Open menu"}
               className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-md border border-white/20 text-white transition-colors hover:border-gold hover:text-gold xl:hidden"

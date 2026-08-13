@@ -1,4 +1,3 @@
-import { ArrowRight, Link, ShieldCheck } from "lucide-react";
 import { Hero } from "./components/home/hero";
 import {
   AboutSection,
@@ -10,6 +9,7 @@ import {
 } from "./components/home/sections";
 import { btnOutline, Section, SectionHeader } from "./components/primitives";
 import { ProjectTimeline } from "./components/home/project-timeline";
+import Link from "next/link";
 
 const title =
   "Instant Shield Security Ltd | Security, Protection & Technical Services";
@@ -40,11 +40,11 @@ export default function Home() {
           <div className="mt-14">
             <ProjectTimeline />
           </div>
-          {/* <div className="mt-12">
+          <div className="mt-12">
             <Link href="/projects" className={btnOutline}>
               View Full Project Record
             </Link>
-          </div> */}
+          </div>
         </div>
       </Section>
       <CTASection />
