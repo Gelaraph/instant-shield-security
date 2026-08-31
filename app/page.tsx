@@ -10,6 +10,7 @@ import {
 import { btnOutline, Section, SectionHeader } from "./components/primitives";
 import { ProjectTimeline } from "./components/home/project-timeline";
 import Link from "next/link";
+import { GalleryMosaic } from "./components/home/gallery-mosaic";
 
 const title =
   "Instant Shield Security Ltd | Security, Protection & Technical Services";
@@ -48,6 +49,7 @@ export default function Home() {
         </div>
       </Section>
       <CTASection />
+      <GalleryMosaic />
     </>
   );
 }

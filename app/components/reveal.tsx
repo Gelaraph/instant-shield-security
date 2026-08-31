@@ -1,5 +1,6 @@
 "use client";
 import {
+  CSSProperties,
   useEffect,
   useRef,
   useState,
@@ -13,11 +14,13 @@ export function Reveal({
   className,
   delay = 0,
   as: Tag = "div",
+  style,
 }: {
   children: ReactNode;
   className?: string;
   delay?: number;
   as?: ElementType;
+  style?: CSSProperties;
 }) {
   const ref = useRef<HTMLElement | null>(null);
   const [visible, setVisible] = useState(false);
@@ -42,7 +45,7 @@ export function Reveal({
     <Tag
       ref={ref}
       data-visible={visible}
-      style={{ transitionDelay: `${delay}ms` }}
+      style={{ transitionDelay: `${delay}ms`, ...style }}
       className={cn("reveal", className)}
     >
       {children}
