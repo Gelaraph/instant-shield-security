@@ -11,6 +11,8 @@ import { btnOutline, Section, SectionHeader } from "./components/primitives";
 import { ProjectTimeline } from "./components/home/project-timeline";
 import Link from "next/link";
 import { GalleryMosaic } from "./components/home/gallery-mosaic";
+import { ImageCarousel } from "./components/home/image-carousel";
+import { CAROUSEL_GALLERY_ITEMS } from "@/lib/gallery";
 
 const title =
   "Instant Shield Security Ltd | Security, Protection & Technical Services";
@@ -24,6 +26,7 @@ export default function Home() {
       <TrustStrip />
       <AboutSection />
       <CapabilitiesSection limit={6} />
+      <ImageCarousel items={CAROUSEL_GALLERY_ITEMS} />
       <QualityPolicySection />
       <IndustriesSection />
       <Section tone="dark" className="overflow-hidden">

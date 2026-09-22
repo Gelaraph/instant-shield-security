@@ -10,9 +10,9 @@ const ServicesPage = () => {
   return (
     <>
       <PageHeader
-        eyebrow="Services"
-        title="A Single Accountable Partner Across Twelve Service Lines"
-        intro="From protective services to procurement, engineering and project evaluation — delivered under one supervisory structure."
+        eyebrow="Core Capabilities"
+        title="Comprehensive Solutions for Government & Enterprise"
+        intro="From security and protective services to specialized equipment, vehicles and project delivery — providing integrated solutions for complex operational requirements."
       />
       <CapabilitiesSection />
       <ProtectionSection />
@@ -20,6 +20,6 @@ const ServicesPage = () => {
       <CTASection />
     </>
   );
-}
+};
 
 export default ServicesPage;

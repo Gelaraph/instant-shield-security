@@ -32,7 +32,7 @@ const AboutPage = () => {
       <IndustriesSection />
       <HSESection />
       <ExecutionModelSection />
-      <LeadershipSection />
+      {/* <LeadershipSection /> */}
       <CTASection />
     </>
   );

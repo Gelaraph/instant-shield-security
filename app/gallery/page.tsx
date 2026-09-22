@@ -1,7 +1,5 @@
 import { Metadata } from "next";
-import Image from "next/image";
-import { Reveal } from "../components/reveal";
-import { GALLERY } from "@/lib/gallery";
+import { GALLERY_ITEMS } from "@/lib/gallery";
 import { PageHeader, Section } from "../components/primitives";
 import { CTASection } from "../components/home/sections";
 import { MosaicGallery } from "../components/home/gallery-mosaic";
@@ -22,7 +20,7 @@ const page = () => {
       />
       <Section>
         <div className="container-x">
-          <MosaicGallery items={GALLERY} />
+          <MosaicGallery items={GALLERY_ITEMS} />
         </div>
       </Section>
       <CTASection />

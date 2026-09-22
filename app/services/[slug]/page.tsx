@@ -9,6 +9,7 @@ import { PageHeader } from "@/app/components/primitives";
 import { Reveal } from "@/app/components/reveal";
 import { ArrowLeft, ArrowRight, Check } from "lucide-react";
 import { CTASection } from "@/app/components/home/sections";
+import Image from "next/image";
 
 export async function generateMetadata({
   params,
@@ -103,6 +104,79 @@ export default async function ServiceDetailPage({
                 <p>{detail.overview}</p>
               </Block>
 
+              <Block title="Available Products">
+                <div className="grid gap-4 sm:grid-cols-2">
+                  {detail.product_details?.map((product) => (
+                    <div
+                      key={product.name}
+                      className="rounded-xl border border-border bg-card p-5"
+                    >
+                      <h3 className="font-display text-lg font-bold text-navy">
+                        {product.name}
+                      </h3>
+
+                      <dl className="mt-4 space-y-3 text-sm">
+                        {product.material && (
+                          <div className="flex justify-between gap-4">
+                            <dt className="font-medium text-slate">Material</dt>
+                            <dd className="text-right text-navy">
+                              {product.material}
+                            </dd>
+                          </div>
+                        )}
+
+                        {product.feature && (
+                          <div className="flex justify-between gap-4">
+                            <dt className="font-medium text-slate">Feature</dt>
+                            <dd className="text-right text-navy">
+                              {product.feature}
+                            </dd>
+                          </div>
+                        )}
+
+                        {product.size && (
+                          <div className="flex justify-between gap-4">
+                            <dt className="font-medium text-slate">Size</dt>
+                            <dd className="text-right text-navy">
+                              {product.size}
+                            </dd>
+                          </div>
+                        )}
+
+                        {product.color && (
+                          <div className="flex justify-between gap-4">
+                            <dt className="font-medium text-slate">Color</dt>
+                            <dd className="text-right text-navy">
+                              {product.color}
+                            </dd>
+                          </div>
+                        )}
+
+                        {product.fabric_weight && (
+                          <div className="flex justify-between gap-4">
+                            <dt className="font-medium text-slate">
+                              Fabric Weight
+                            </dt>
+                            <dd className="text-right text-navy">
+                              {product.fabric_weight}
+                            </dd>
+                          </div>
+                        )}
+
+                        {product.design && (
+                          <div className="flex justify-between gap-4">
+                            <dt className="font-medium text-slate">Design</dt>
+                            <dd className="text-right text-navy">
+                              {product.design}
+                            </dd>
+                          </div>
+                        )}
+                      </dl>
+                    </div>
+                  ))}
+                </div>
+              </Block>
+
               <Block title="Our Approach">
                 <ul className="space-y-3">
                   {detail.approach.map((item) => (
@@ -117,23 +191,6 @@ export default async function ServiceDetailPage({
                 </ul>
               </Block>
 
-              <Block title="Operational Capabilities">
-                <ul className="grid gap-3 sm:grid-cols-2">
-                  {detail.operational.map((item) => (
-                    <li
-                      key={item}
-                      className="rounded-xl border border-border bg-card px-4 py-3 text-sm font-medium text-navy"
-                    >
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </Block>
-
-              <Block title="Personnel & Expertise">
-                <p>{detail.personnel}</p>
-              </Block>
-
               <Block title="Client Benefits">
                 <ul className="space-y-3">
                   {detail.benefits.map((item) => (
@@ -146,6 +203,33 @@ export default async function ServiceDetailPage({
                     </li>
                   ))}
                 </ul>
+              </Block>
+
+              <Block title="Product Sample Images">
+                {detail.images?.length ? (
+                  <section className="bg-background pb-16 sm:pb-24">
+                    <Reveal>
+                      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                        {detail.images.map((image, index) => (
+                          <div
+                            key={image.src}
+                            className="relative aspect-[4/3] overflow-hidden rounded-2xl"
+                          >
+                            <Image
+                              src={image.src}
+                              alt={
+                                image.alt || `${detail.title} - ${index + 1}`
+                              }
+                              fill
+                              className="object-cover transition-transform duration-700 hover:scale-105"
+                              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    </Reveal>
+                  </section>
+                ) : null}
               </Block>
             </div>
 

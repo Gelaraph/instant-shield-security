@@ -136,11 +136,11 @@ export function CapabilitiesSection({ limit }: { limit?: number }) {
   return (
     <Section tone="soft">
       <div className="container-x">
-        <SectionHeader
+        {/* <SectionHeader
           eyebrow="Core Capabilities"
-          title="Integrated Capabilities for Complex Operations"
-          intro="One accountable partner across protection, procurement, engineering and project delivery — structured for the demands of government and enterprise contracting."
-        />
+          title="Comprehensive Solutions for Government & Enterprise"
+          intro="From security and protective services to specialized equipment, vehicles and project delivery — providing integrated solutions for complex operational requirements."
+        /> */}
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((s, i) => (
             <ServiceCard key={s.slug} {...s} index={i} />

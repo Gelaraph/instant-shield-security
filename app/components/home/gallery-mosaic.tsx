@@ -1,6 +1,6 @@
 "use client";
 import { ArrowRight } from "lucide-react";
-import { GALLERY, GalleryItem } from "@/lib/gallery";
+import { GALLERY_ITEMS, GalleryItem } from "@/lib/gallery";
 import Image from "next/image";
 import Link from "next/link";
 import { Reveal } from "../reveal";
@@ -9,7 +9,7 @@ import Masonry from "react-masonry-css";
 
 /** Mosaic preview of the gallery for the home page. */
 export function GalleryMosaic() {
-  const items = GALLERY.slice(0, 7);
+  const items = GALLERY_ITEMS.slice(0, 7);
   return (
     <Section tone="soft">
       <div className="container-x">
@@ -51,7 +51,7 @@ export function MosaicGallery({ items }: { items: GalleryItem[] }) {
           <figure className="group relative w-full overflow-hidden rounded-xl">
             <Image
               src={item.src}
-              alt={item.alt}
+              alt={item.caption}
               width={item.width}
               height={item.height}
               loading="lazy"
